@@ -1,13 +1,11 @@
-import java.util.Random;
-
 public class Main
 {
 
     public static void main(String[] args)
     {
-        Random random = new Random();
-
-        int x = random.nextInt(5)+1;
-        System.out.println(x);
+        for(int i=0;i<args.length;i++)
+        {
+            System.out.println(args[i]);
+        }
     }
 }
