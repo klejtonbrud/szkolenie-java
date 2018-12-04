@@ -7,7 +7,7 @@ public class Main
     {
         Random random = new Random();
 
-        int x = random.nextInt(5)+1;
+        int x = random.nextInt(6)+1;
         System.out.println(x);
     }
 }
