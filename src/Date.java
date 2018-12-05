@@ -10,4 +10,10 @@ public class Date
         month = m;
         year = y;
     }
+
+    public static String getInfo(Date date)
+    {
+        return date.day + "." + date.month + "." + date.year;
+    }
+
 }
