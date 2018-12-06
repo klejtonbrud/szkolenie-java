@@ -19,8 +19,9 @@ public class TravelOffice
         if(getCustomerCount() == customers.length)
         {
             int len = customers.length;
-            Customer[] arr = new Customer[len+1];
+            Customer[] arr = new Customer[len+2];
             System.arraycopy(customers, 0, arr, 0, len);
+            arr[len] = customer;
             customers = arr;
         }
         else
@@ -40,7 +41,7 @@ public class TravelOffice
     {
         String result = "";
 
-        for(int i=0; i<customers.length; i++)
+        for(int i=0; i<getCustomerCount(); i++)
         {
             result += customers[i].getInfo() + "\n\n";
         }
