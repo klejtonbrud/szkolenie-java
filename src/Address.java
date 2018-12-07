@@ -1,8 +1,8 @@
 public class Address
 {
-    String street;
-    String zip;
-    String city;
+    private String street;
+    private String zip;
+    private String city;
 
     Address(String street_name, String zipcode, String city_name)
     {
@@ -11,8 +11,9 @@ public class Address
         city = city_name;
     }
 
-    public static String getInfo(Address address)
+    @Override
+    public String toString()
     {
-        return address.street + "\n" + address.zip + ", " + address.city;
+        return street + "\n" + zip + ", " + city;
     }
 }

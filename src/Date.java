@@ -1,17 +1,22 @@
+import java.util.regex.*;
+
 public class Date
 {
-    int day;
-    int month;
-    int year;
+    private int day;
+    private int month;
+    private int year;
 
-    Date(int d,int m, int y)
+    Date(String txt)
     {
-        day = d;
-        month = m;
-        year = y;
+        Pattern ptn = Pattern.compile("(\\.|-|\\/|\\\\)");
+        String[] parts = ptn.split(txt);
+
+        day = Integer.valueOf(parts[0]);
+        month = Integer.valueOf(parts[1]);
+        year = Integer.valueOf(parts[2]);
     }
 
-    public static String getInfo(Date date)
+    public static String toString(Date date)
     {
         return date.day + "." + date.month + "." + date.year;
     }

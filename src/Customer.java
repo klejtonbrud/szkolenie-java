@@ -1,8 +1,8 @@
 public class Customer
 {
-    String name;
-    Address address;
-    Trip trip;
+    private String name;
+    private Address address;
+    private Trip trip;
 
     Customer(String customer_name)
     {
@@ -19,8 +19,9 @@ public class Customer
         trip = customer_trip;
     }
 
-    public String getInfo()
+    @Override
+    public String toString()
     {
-        return "Customer info:\nName: " + name + "\nAddress: " + Address.getInfo(address) + "\nTrip: " + Trip.getInfo(trip);
+        return "Customer info:\nName: " + name + "\nAddress: " + address.toString() + "\nTrip: " + trip.toString();
     }
 }
