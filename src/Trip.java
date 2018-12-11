@@ -15,7 +15,7 @@ abstract class Trip
     @Override
     public String toString()
     {
-        return "Trip to " + destination + "\nstart: " + Date.toString(start) + "\nend: " + Date.toString(end) + "\nPrice: " + getPrice();
+        return "\nTrip to " + destination + "\nstart: " + Date.toString(start) + "\nend: " + Date.toString(end) + "\nPrice: " + getPrice() + "\n";
     }
 
     public Date getStart()

@@ -90,7 +90,7 @@ public class TravelOffice
     @Override
     public String toString()
     {
-        return "TravelOffice{" +
+        return "\nTravelOffice{" +
                 "customers=" + getAllCustomers() +
                 ", trips=" + getAllTrips() +
                 '}';

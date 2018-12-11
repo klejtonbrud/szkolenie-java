@@ -27,6 +27,6 @@ public class Customer
     @Override
     public String toString()
     {
-        return "Customer info:\nName: " + name + "\nAddress: " + address.toString() + "\nTrip: "/* + trip.toString()*/;
+        return "\nCustomer info:\nName: " + name + "\nAddress: " + address.toString() + "\nTrip: " + trip.toString() + "\n";
     }
 }
