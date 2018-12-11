@@ -1,4 +1,4 @@
-public class Trip
+abstract class Trip
 {
     private Date start;
     private Date end;

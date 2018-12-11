@@ -9,6 +9,11 @@ public class Customer
         name = customer_name;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
     public void setAddress(Address customer_address)
     {
         address = customer_address;
@@ -22,6 +27,6 @@ public class Customer
     @Override
     public String toString()
     {
-        return "Customer info:\nName: " + name + "\nAddress: " + address.toString() + "\nTrip: " + trip.toString();
+        return "Customer info:\nName: " + name + "\nAddress: " + address.toString() + "\nTrip: "/* + trip.toString()*/;
     }
 }

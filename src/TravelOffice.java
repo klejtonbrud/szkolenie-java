@@ -1,52 +1,98 @@
+import java.util.*;
+
 public class TravelOffice
 {
-    Customer[] customers = new Customer[2];
+    Collection<Customer> customers = new HashSet<>();
 
     public int getCustomerCount()
     {
-        for(int i = 0; i < customers.length; i++)
-        {
-            if(customers[i] == null)
-            {
-                return i;
-            }
-        }
-        return customers.length;
+        return customers.size();
     }
 
     public void addCustomer(Customer customer)
     {
-        if(getCustomerCount() == customers.length)
+        customers.add(customer);
+    }
+
+    public Customer findCustomerByName(String name)
+    {
+        for(Iterator<Customer> i = customers.iterator(); i.hasNext();)
         {
-            int len = customers.length;
-            Customer[] arr = new Customer[len+2];
-            System.arraycopy(customers, 0, arr, 0, len);
-            arr[len] = customer;
-            customers = arr;
+            Customer element = i.next();
+            if(element.getName() == name)
+            {
+                return element;
+            }
+        }
+        return null;
+    }
+
+    public boolean removeCustomer(Customer customer)
+    {
+        int size = customers.size();
+        customers.remove(customer);
+        if(customers.size() < size)
+        {
+            return true;
         }
         else
         {
-            for(int i = 0; i < customers.length; i++)
-            {
-                if(customers[i] == null)
-                {
-                    customers[i] = customer;
-                    break;
-                }
-            }
+            return false;
         }
+    }
+
+    public String getAllCustomers()
+    {
+        String result = "";
+
+        for(Iterator<Customer> i = customers.iterator(); i.hasNext();)
+        {
+            Customer c = i.next();
+            result += c.toString();
+        }
+
+        return result;
+    }
+
+    Map<Long, Trip> trips = new HashMap<>();
+
+    public void addTrip(Long id, Trip trip)
+    {
+        trips.put(id,trip);
+    }
+
+    public boolean removeTrip(Long id)
+    {
+        int size = trips.size();
+        trips.remove(id);
+        if(trips.size()<size)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public String getAllTrips()
+    {
+        String result = "";
+
+        for(long i=0; i<trips.size(); i++)
+        {
+            result += trips.get(i).toString();
+        }
+
+        return result;
     }
 
     @Override
     public String toString()
     {
-        String result = "";
-
-        for(int i=0; i<getCustomerCount(); i++)
-        {
-            result += customers[i].toString() + "\n\n";
-        }
-
-        return result;
+        return "TravelOffice{" +
+                "customers=" + getAllCustomers() +
+                ", trips=" + getAllTrips() +
+                '}';
     }
 }
